@@ -1,13 +1,15 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter, Navigate, Route, Routes, Router, Switch, HashRouter } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, Router, Switch, HashRouter as Router } from "react-router-dom";
 import Task from "./pages/Task";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { saveProfile } from "./redux/actions/authActions";
 import NotFound from "./pages/NotFound";
+
+
 
 function App() {
 
@@ -33,8 +35,16 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        {/* Other routes */}
+      </Switch>
+    </Router>
     </>
   );
+
 }
 
 export default App;
