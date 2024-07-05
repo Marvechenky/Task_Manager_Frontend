@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, Router, Switch, HashRouter } from "react-router-dom";
 import Task from "./pages/Task";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
