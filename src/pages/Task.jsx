@@ -29,7 +29,7 @@ const Task = () => {
 
   useEffect(() => {
     if (mode === "update") {
-      const config = { url: `/tasks/${taskId}`, method: "get", headers: { Authorization: authState.token } };
+      const config = { url: `/taskId/${taskId}`, method: "get", headers: { Authorization: authState.token } };
       fetchData(config, { showSuccessToast: false }).then((data) => {
         setTask(data.task);
         setFormData({ description: data.task.description });
@@ -63,13 +63,13 @@ const Task = () => {
     }
 
     if (mode === "add") {
-      const config = { url: "/tasks", method: "post", data: formData, headers: { Authorization: authState.token } };
+      const config = { url: "/add", method: "post", data: formData, headers: { Authorization: authState.token } };
       fetchData(config).then(() => {
         navigate("/");
       });
     }
     else {
-      const config = { url: `/tasks/${taskId}`, method: "put", data: formData, headers: { Authorization: authState.token } };
+      const config = { url: `/taskId/${taskId}`, method: "put", data: formData, headers: { Authorization: authState.token } };
       fetchData(config).then(() => {
         navigate("/");
       });
